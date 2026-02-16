@@ -2,18 +2,16 @@
 
 // Дозволені типи вхідних даних
 const TYPES = new Set([
-    "leg",              // катет
-    "hypotenuse",       // гіпотенуза
-    "adjacent angle",   // прилеглий до катета кут
-    "opposite angle",   // протилежний до катета кут
-    "angle"             // один з гострих кутів (коли задана гіпотенуза)
+    "leg",
+    "hypotenuse",
+    "adjacent angle",
+    "opposite angle",
+    "angle"
 ]);
 
-// Допоміжні функції для переведення градусів ↔ радіан
 const toRad = d => d * Math.PI / 180;
 const toDeg = r => r * 180 / Math.PI;
 
-// Інструкція для користувача (виводиться при запуску сторінки)
 function usage() {
     console.log("Функція: triangle(значення1, тип1, значення2, тип2)");
     console.log('Типи: "leg", "hypotenuse", "adjacent angle", "opposite angle", "angle"');
@@ -22,13 +20,15 @@ function usage() {
 }
 usage();
 
-/**
- * Основна функція розв'язування прямокутного трикутника
- * Повертає "success" при успішному обчисленні або "failed"/повідомлення про помилку
- */
-function triangle(v1, t1, v2, t2) {
+// перевірка існування трикутника за трьома сторонами
+function isTriangle(x, y, z) {
+    // усі сторони > 0
+    if (!(x > 0 && y > 0 && z > 0)) return false;
+    // нерівність трикутника (строга)
+    return (x + y > z) && (x + z > y) && (y + z > x);
+}
 
-    // ---- Перевірка числових значень ----
+function triangle(v1, t1, v2, t2) {
     if (!Number.isFinite(v1) || !Number.isFinite(v2)) {
         console.log("Помилка: введено нечислове значення");
         return "Non-numeric input";
@@ -39,7 +39,6 @@ function triangle(v1, t1, v2, t2) {
         return "Zero or negative input";
     }
 
-    // ---- Нормалізація типів (нижній регістр, обрізання пробілів) ----
     t1 = String(t1).trim().toLowerCase();
     t2 = String(t2).trim().toLowerCase();
 
@@ -48,15 +47,12 @@ function triangle(v1, t1, v2, t2) {
         return "failed";
     }
 
-    // Об'єднуємо аргументи в масив і сортуємо за типом
-    // Це дозволяє не залежати від порядку введення
     const p = [{v: v1, t: t1}, {v: v2, t: t2}]
         .sort((a, b) => a.t.localeCompare(b.t));
 
-    const a1 = p[0]; // перший аргумент
-    const a2 = p[1]; // другий аргумент
+    const a1 = p[0];
+    const a2 = p[1];
 
-    // Функція для виводу результатів у класичних позначеннях
     const out = (a, b, c, alpha, beta) => {
         console.log("a (катет) =", a);
         console.log("b (катет) =", b);
@@ -65,7 +61,6 @@ function triangle(v1, t1, v2, t2) {
         console.log("beta (гострий кут) =", beta);
     };
 
-    // Перевірка, що кут є гострим
     const isAcute = x => x > 0 && x < 90;
 
     // ---- Випадок 1: гіпотенуза + кут ----
@@ -81,6 +76,12 @@ function triangle(v1, t1, v2, t2) {
         const r = toRad(alpha);
         const a = c * Math.sin(r);
         const b = c * Math.cos(r);
+
+        // перевірка існування трикутника
+        if (!isTriangle(a, b, c)) {
+            console.log("Помилка: з такими даними трикутник не існує");
+            return "Invalid triangle";
+        }
 
         out(a, b, c, alpha, 90 - alpha);
         return "success";
@@ -100,6 +101,11 @@ function triangle(v1, t1, v2, t2) {
         const b = a * Math.tan(r);
         const c = a / Math.cos(r);
 
+        if (!isTriangle(a, b, c)) {
+            console.log("Помилка: з такими даними трикутник не існує");
+            return "Invalid triangle";
+        }
+
         out(a, b, c, 90 - beta, beta);
         return "success";
     }
@@ -110,8 +116,14 @@ function triangle(v1, t1, v2, t2) {
         const b = a2.v;
 
         const c = Math.hypot(a, b);
-        const alpha = toDeg(Math.atan2(a, b));
 
+        // явна перевірка (хоча для катетів з c=гіпотенузою завжди ок)
+        if (!isTriangle(a, b, c)) {
+            console.log("Помилка: з такими сторонами трикутник не існує");
+            return "Invalid triangle";
+        }
+
+        const alpha = toDeg(Math.atan2(a, b));
         out(a, b, c, alpha, 90 - alpha);
         return "success";
     }
@@ -127,8 +139,14 @@ function triangle(v1, t1, v2, t2) {
         }
 
         const b = Math.sqrt(c * c - a * a);
-        const alpha = toDeg(Math.asin(a / c));
 
+        //  перевірка існування трикутника
+        if (!isTriangle(a, b, c)) {
+            console.log("Помилка: з такими сторонами трикутник не існує");
+            return "Invalid triangle";
+        }
+
+        const alpha = toDeg(Math.asin(a / c));
         out(a, b, c, alpha, 90 - alpha);
         return "success";
     }
@@ -146,6 +164,11 @@ function triangle(v1, t1, v2, t2) {
         const r = toRad(alpha);
         const b = a / Math.tan(r);
         const c = a / Math.sin(r);
+
+        if (!isTriangle(a, b, c)) {
+            console.log("Помилка: з такими даними трикутник не існує");
+            return "Invalid triangle";
+        }
 
         out(a, b, c, alpha, 90 - alpha);
         return "success";
