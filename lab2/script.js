@@ -1,7 +1,3 @@
-// ========================================
-// 1. car1 через new Object()
-// ========================================
-
 let car1 = new Object();
 
 car1.color = "blue";
@@ -22,11 +18,6 @@ car1.drive = function () {
 
 console.log("car1:", car1);
 car1.drive();
-
-
-// ========================================
-// 2. car2 через літерал
-// ========================================
 
 let car2 = {
 
@@ -51,11 +42,6 @@ let car2 = {
 console.log("car2:", car2);
 car2.drive();
 
-
-// ========================================
-// 3. Конструктор Truck
-// ========================================
-
 function Truck(color, weight, avgSpeed, brand, model) {
 
     this.color = color;
@@ -66,11 +52,6 @@ function Truck(color, weight, avgSpeed, brand, model) {
 
 }
 
-
-// ========================================
-// 4. AssignDriver
-// ========================================
-
 Truck.prototype.AssignDriver = function(name, nightDriving, experience) {
 
     this.driver = {
@@ -80,11 +61,6 @@ Truck.prototype.AssignDriver = function(name, nightDriving, experience) {
     };
 
 };
-
-
-// ========================================
-// 5. trip()
-// ========================================
 
 Truck.prototype.trip = function() {
 
@@ -107,11 +83,6 @@ Truck.prototype.trip = function() {
 
 };
 
-
-// ========================================
-// 6. Створення Truck
-// ========================================
-
 let truck1 = new Truck("white", 5000, 90, "Volvo", "FH");
 let truck2 = new Truck("black", 4500, 80, "MAN", "TGX");
 
@@ -120,11 +91,6 @@ truck2.AssignDriver("Vlad Danyleychuk", false, 5);
 
 truck1.trip();
 truck2.trip();
-
-
-// ========================================
-// 7. Клас Square
-// ========================================
 
 class Square {
 
@@ -153,11 +119,6 @@ class Square {
 
 }
 
-
-// ========================================
-// 8. Rectangle
-// ========================================
-
 class Rectangle extends Square {
 
     constructor(a, b) {
@@ -185,11 +146,6 @@ class Rectangle extends Square {
     }
 
 }
-
-
-// ========================================
-// 9. Rhombus + getters/setters
-// ========================================
 
 class Rhombus extends Square {
 
@@ -237,11 +193,6 @@ class Rhombus extends Square {
 
 }
 
-
-// ========================================
-// 10. Parallelogram
-// ========================================
-
 class Parallelogram extends Rectangle {
 
     constructor(a, b, alpha, beta) {
@@ -272,20 +223,10 @@ class Parallelogram extends Rectangle {
 
 }
 
-
-// ========================================
-// 11. Демонстрація help()
-// ========================================
-
 Square.help();
 Rectangle.help();
 Rhombus.help();
 Parallelogram.help();
-
-
-// ========================================
-// 12. Створення об'єктів
-// ========================================
 
 let sq = new Square(5);
 let rect = new Rectangle(4, 6);
@@ -296,11 +237,6 @@ sq.info();
 rect.info();
 rhomb.info();
 para.info();
-
-
-// ========================================
-// 13. Triangular
-// ========================================
 
 function Triangular(a = 3, b = 4, c = 5) {
 
@@ -320,11 +256,6 @@ console.log(t1);
 console.log(t2);
 console.log(t3);
 
-
-// ========================================
-// 14. PiMultiplier
-// ========================================
-
 function PiMultiplier(number) {
 
     return function () {
@@ -340,11 +271,6 @@ let divideBy2 = PiMultiplier(0.5);
 console.log(multiplyBy2());
 console.log(multiplyByTwoThirds());
 console.log(divideBy2());
-
-
-// ========================================
-// 15. Painter
-// ========================================
 
 function Painter(color) {
 
@@ -364,11 +290,6 @@ let PaintBlue = Painter("Blue");
 let PaintRed = Painter("Red");
 let PaintYellow = Painter("Yellow");
 
-
-// ========================================
-// 16. Тестові об'єкти
-// ========================================
-
 let obj1 = {
     maxSpeed: 280,
     type: "Sportcar",
@@ -386,11 +307,6 @@ let obj3 = {
     color: "purple",
     isCar: true
 };
-
-
-// ========================================
-// 17. Демонстрація Painter
-// ========================================
 
 PaintBlue(obj1);
 PaintRed(obj1);
