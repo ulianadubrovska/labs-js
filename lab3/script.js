@@ -16,11 +16,13 @@
     }
 
 // Додаткове завдання
-    console.log("---- Names longer than 4 letters ----");
+    console.log("---- Names ending with letter A ----");
 
     for (var i = 0; i < names.length; i++) {
 
-        if (names[i].length > 4) {
+        var lastLetter = names[i].charAt(names[i].length - 1).toLowerCase();
+
+        if (lastLetter === "a") {
             console.log(names[i]);
         }
 
