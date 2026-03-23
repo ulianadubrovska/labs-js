@@ -16,7 +16,7 @@
     }
 
 // Додаткове завдання
-    console.log("---- Names ending with letter A ----");
+    console.log("Names ending with letter A ");
 
     for (var i = 0; i < names.length; i++) {
 
