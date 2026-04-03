@@ -1,11 +1,8 @@
-// ===== ДОПОМІЖНІ ФУНКЦІЇ =====
 
-// порівняння для asc / desc
 function cmp(a, b, asc) {
     return asc ? a > b : a < b;
 }
 
-// відділяємо undefined
 function prepare(arr) {
     let clean = [];
     let undefCount = 0;
@@ -37,11 +34,10 @@ function printStats(name, comp, move, hasUndef) {
     console.log(`Порівнянь: ${comp}`);
     console.log(`Переміщень: ${move}`);
     if (hasUndef) {
-        console.log("⚠ undefined елементи переміщені в кінець");
+        console.log("undefined елементи переміщені в кінець");
     }
 }
 
-// ===== 1. БУЛЬБАШКА =====
 function bubbleSort(arr, asc = true) {
     let { clean, undefCount } = prepare(arr);
     let comp = 0, swap = 0;
@@ -61,7 +57,6 @@ function bubbleSort(arr, asc = true) {
     return arr;
 }
 
-// ===== 2. ВИБІР =====
 function selectionSort(arr, asc = true) {
     let { clean, undefCount } = prepare(arr);
     let comp = 0, swap = 0;
@@ -87,7 +82,6 @@ function selectionSort(arr, asc = true) {
     return arr;
 }
 
-// ===== 3. ВСТАВКИ =====
 function insertionSort(arr, asc = true) {
     let { clean, undefCount } = prepare(arr);
     let comp = 0, move = 0;
@@ -113,7 +107,6 @@ function insertionSort(arr, asc = true) {
     return arr;
 }
 
-// ===== 4. ШЕЛЛ =====
 function shellSort(arr, asc = true) {
     let { clean, undefCount } = prepare(arr);
     let comp = 0, move = 0;
@@ -145,7 +138,6 @@ function shellSort(arr, asc = true) {
     return arr;
 }
 
-// ===== 5. QUICK =====
 function quickSort(arr, asc = true) {
     let { clean, undefCount } = prepare(arr);
     let comp = 0, swap = 0;

@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    font-family: Arial;
+}
+
+#box {
+    position: absolute;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+button {
+    margin: 10px;
+}
