@@ -226,4 +226,3 @@ console.log("Shell результат:", sh2);
 
 let q2 = quickSort([...sparse], false);
 console.log("Quick результат:", q2);
-quickSort([...sparse], false);
