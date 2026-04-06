@@ -28,7 +28,6 @@ function restore(arr, sorted, undefCount) {
     }
 }
 
-// красивий вивід у консоль
 function printStats(name, comp, move, hasUndef) {
     console.log(`\n=== ${name} ===`);
     console.log(`Порівнянь: ${comp}`);
