@@ -3,32 +3,38 @@ let timeLeft = 0;
 let timer = null;
 let gameActive = false;
 
+const difficultySelect = document.getElementById("difficulty");
+const colorSelect = document.getElementById("color");
+const menu = document.getElementById("menu");
+const game = document.getElementById("game");
+const scoreDisplay = document.getElementById("score");
+const timeDisplay = document.getElementById("time");
+const box = document.getElementById("box");
+
 let settings = {
-    easy: { time: 8, spread: 200, size: 70 },
-    medium: { time: 4, spread: 400, size: 50 },
-    hard: { time: 2, spread: 800, size: 35 }
+    easy: { time: 8, size: 70 },
+    medium: { time: 4, size: 50 },
+    hard: { time: 2, size: 35 }
 };
 
 function startGame() {
-    let difficulty = document.getElementById("difficulty").value;
-    let color = document.getElementById("color").value;
+    let difficulty = difficultySelect.value;
+    let color = colorSelect.value;
 
     if (!difficulty || !color) return;
 
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("game").style.display = "block";
+    menu.style.display = "none";
+    game.style.display = "block";
 
     score = 0;
     gameActive = true;
 
-    document.getElementById("score").textContent = score;
+    scoreDisplay.textContent = score;
 
     setupGame(difficulty, color);
 }
 
 function setupGame(diff, color) {
-    let box = document.getElementById("box");
-
     box.style.background = color;
     box.style.width = settings[diff].size + "px";
     box.style.height = settings[diff].size + "px";
@@ -37,19 +43,17 @@ function setupGame(diff, color) {
         if (!gameActive) return;
 
         score++;
-        document.getElementById("score").textContent = score;
+        scoreDisplay.textContent = score;
 
-        moveBox(settings[diff].spread);
+        moveBox();
         resetTimer(settings[diff].time);
     };
 
-    moveBox(settings[diff].spread);
+    moveBox();
     resetTimer(settings[diff].time);
 }
 
-function moveBox(spread) {
-    let box = document.getElementById("box");
-
+function moveBox() {
     let boxWidth = box.offsetWidth;
     let boxHeight = box.offsetHeight;
 
@@ -66,11 +70,11 @@ function moveBox(spread) {
 function resetTimer(time) {
     clearInterval(timer);
     timeLeft = time;
-    document.getElementById("time").textContent = timeLeft;
+    timeDisplay.textContent = timeLeft;
 
     timer = setInterval(() => {
         timeLeft--;
-        document.getElementById("time").textContent = timeLeft;
+        timeDisplay.textContent = timeLeft;
 
         if (timeLeft <= 0) {
             gameOver();
@@ -88,6 +92,6 @@ function gameOver() {
 function restartGame() {
     clearInterval(timer);
 
-    document.getElementById("game").style.display = "none";
-    document.getElementById("menu").style.display = "block";
+    game.style.display = "none";
+    menu.style.display = "block";
 }
