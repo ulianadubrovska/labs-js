@@ -28,7 +28,6 @@ function restore(arr, sorted, undefCount) {
     }
 }
 
-// красивий вивід у консоль
 function printStats(name, comp, move, hasUndef) {
     console.log(`\n=== ${name} ===`);
     console.log(`Порівнянь: ${comp}`);
@@ -185,12 +184,23 @@ function quickSort(arr, asc = true) {
 let arr = Array.from({ length: 100 }, () => Math.floor(Math.random() * 100));
 
 console.log("🔹 Звичайний масив");
+console.log("Початковий:", arr);
 
-bubbleSort([...arr]);
-selectionSort([...arr]);
-insertionSort([...arr]);
-shellSort([...arr]);
-quickSort([...arr]);
+
+let b = bubbleSort([...arr]);
+console.log("Bubble результат:", b);
+
+let s = selectionSort([...arr]);
+console.log("Selection результат:", s)
+
+let i = insertionSort([...arr]);
+console.log("Insertion результат:", i);
+
+let sh = shellSort([...arr]);
+console.log("Shell результат:", sh);
+
+let q = quickSort([...arr]);
+console.log("Quick результат:", q);
 
 // розріджений масив
 let sparse = [];
@@ -199,9 +209,19 @@ for (let i = 0; i < 100; i++) {
 }
 
 console.log("\n🔹 Розріджений масив");
+console.log("Початковий:", sparse);
 
-bubbleSort([...sparse], false);
-selectionSort([...sparse], false);
-insertionSort([...sparse], false);
-shellSort([...sparse], false);
-quickSort([...sparse], false);
+let b2 = bubbleSort([...sparse], false);
+console.log("Bubble результат:", b2);
+
+let s2 = selectionSort([...sparse], false);
+console.log("Selection результат:", s2);
+
+let i2 = insertionSort([...sparse], false);
+console.log("Insertion результат:", i2);
+
+let sh2 = shellSort([...sparse], false);
+console.log("Shell результат:", sh2);
+
+let q2 = quickSort([...sparse], false);
+console.log("Quick результат:", q2);
