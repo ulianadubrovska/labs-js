@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza",
+    "shortname": "pizza",
+    "notes": "Classic Italian pizzas with fresh ingredients."
+  },
+  {
+    "id": 2,
+    "name": "Burgers",
+    "shortname": "burgers",
+    "notes": "Juicy burgers served with signature sauces."
+  },
+  {
+    "id": 3,
+    "name": "Drinks",
+    "shortname": "drinks",
+    "notes": "Refreshing beverages for every taste."
+  },
+  {
+    "id": 4,
+    "name": "Desserts",
+    "shortname": "desserts",
+    "notes": "Sweet treats to complete your meal."
+  }
+]

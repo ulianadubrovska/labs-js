@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Chocolate Cake",
+    "shortname": "chocolate_cake",
+    "description": "Soft chocolate cake with creamy chocolate frosting.",
+    "price": "$7"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "shortname": "cheesecake",
+    "description": "Creamy cheesecake with a crunchy biscuit base.",
+    "price": "$6"
+  },
+  {
+    "id": 3,
+    "name": "Ice Cream",
+    "shortname": "ice_cream",
+    "description": "Vanilla ice cream served with chocolate topping.",
+    "price": "$5"
+  },
+  {
+    "id": 4,
+    "name": "Apple Pie",
+    "shortname": "apple_pie",
+    "description": "Warm apple pie with cinnamon and a golden crust.",
+    "price": "$6"
+  }
+]

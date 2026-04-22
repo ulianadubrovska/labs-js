@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Pepperoni Pizza",
+    "shortname": "pepperoni_pizza",
+    "description": "Classic pizza with tomato sauce, mozzarella cheese and pepperoni slices.",
+    "price": "$12"
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "shortname": "margherita_pizza",
+    "description": "Traditional pizza with tomato sauce, mozzarella and fresh basil.",
+    "price": "$10"
+  },
+  {
+    "id": 3,
+    "name": "BBQ Chicken Pizza",
+    "shortname": "bbq_chicken_pizza",
+    "description": "Pizza with BBQ sauce, chicken, red onion and melted cheese.",
+    "price": "$14"
+  },
+  {
+    "id": 4,
+    "name": "Vegetarian Pizza",
+    "shortname": "vegetarian_pizza",
+    "description": "Pizza topped with mushrooms, peppers, olives and sweet corn.",
+    "price": "$11"
+  }
+]

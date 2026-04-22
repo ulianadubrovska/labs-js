@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Orange Juice",
+    "shortname": "orange_juice",
+    "description": "Fresh orange juice served cold and without added sugar.",
+    "price": "$4"
+  },
+  {
+    "id": 2,
+    "name": "Lemonade",
+    "shortname": "lemonade",
+    "description": "Refreshing homemade lemonade with lemon slices and mint.",
+    "price": "$3"
+  },
+  {
+    "id": 3,
+    "name": "Iced Coffee",
+    "shortname": "iced_coffee",
+    "description": "Cold coffee with milk, ice and a light vanilla flavor.",
+    "price": "$5"
+  },
+  {
+    "id": 4,
+    "name": "Berry Smoothie",
+    "shortname": "berry_smoothie",
+    "description": "Smoothie made with strawberries, blueberries and yogurt.",
+    "price": "$6"
+  }
+]

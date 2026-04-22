@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Beef Burger",
+    "shortname": "classic_beef_burger",
+    "description": "Grilled beef patty with lettuce, tomato, onion and house sauce.",
+    "price": "$9"
+  },
+  {
+    "id": 2,
+    "name": "Cheese Burger",
+    "shortname": "cheese_burger",
+    "description": "Juicy beef burger with cheddar cheese, pickles and ketchup.",
+    "price": "$10"
+  },
+  {
+    "id": 3,
+    "name": "Chicken Burger",
+    "shortname": "chicken_burger",
+    "description": "Crispy chicken fillet with lettuce, tomato and garlic sauce.",
+    "price": "$8"
+  },
+  {
+    "id": 4,
+    "name": "Double Burger",
+    "shortname": "double_burger",
+    "description": "Double beef patty burger with cheese, onion and smoky sauce.",
+    "price": "$13"
+  }
+]
