@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a523821b-942d-495f-a93a-c8bceb84884a" name="Changes" comment="add main page with lab links">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a523821b-942d-495f-a93a-c8bceb84884a" name="Changes" comment="add main page with lab links" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +77,7 @@
       <workItem from="1776338679093" duration="1786000" />
       <workItem from="1776892860589" duration="4000" />
       <workItem from="1776892881067" duration="1420000" />
+      <workItem from="1778009654629" duration="2189000" />
     </task>
     <task id="LOCAL-00001" summary="lab1 ready">
       <option name="closed" value="true" />
@@ -168,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776894554768</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add main page with lab links">
+      <option name="closed" value="true" />
+      <created>1778012177498</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1778012177498</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
